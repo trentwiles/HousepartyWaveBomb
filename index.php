@@ -37,6 +37,8 @@ foreach($better as $betters)
         array_push($list, $betters["id"]);
 }
 
+$number = count($list);
+
 function greet($id)
 {
   $greet = 'https://api2.thehousepartyapp.com/users/${id}/greet';
@@ -62,5 +64,8 @@ greet("5eb71fc7eb641d4208858625");
 foreach($list as $users)
 {
   greet($user);
+  echo "Waved to user ${user} \n";
   sleep(1); // delay to prevent ratelimits
 }
+
+echo "Waved to ${number} users. DONE";
